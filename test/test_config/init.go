@@ -13,7 +13,12 @@ func Init() {
 		log.Logger.Debug("already init")
 	} else {
 		path := "../data/gaokao.sqlite"
-		_ = os.Remove(path) // ignore error because path may be not exists
+		//err := os.Remove(path)
+		//if err != nil {
+		//	if !os.IsNotExist(err) {
+		//		awesome_error.CheckFatal(err)
+		//	}
+		//}
 		awesome_error.CheckFatal(os.Setenv("DB_DSN", path))
 		AlreadyInit = true
 	}

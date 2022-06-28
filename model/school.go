@@ -8,8 +8,10 @@ import (
 
 type School struct {
 	gorm.Model
-	Name string `json:"name"`
-	Code string `json:"code"`
+	Year       int    `json:"year"`
+	Name       string `json:"name"`
+	Code       string `json:"code"`
+	LowestRank int    `json:"lowest_rank"`
 }
 
 var SchemaSchool schema.Schema
